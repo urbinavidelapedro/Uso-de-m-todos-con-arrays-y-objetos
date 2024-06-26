@@ -88,7 +88,7 @@ pacientesIsapreRadiologia.forEach(paciente => {
     document.write(`${paciente.paciente} - ${paciente.prevision}<br>`);
 });
 
-//filtro tarumatologia ISAPRE
+//filtro traumatologia ISAPRE
 const pacientesIsapreTraumatologia = traumatologia.filter(paciente => paciente.prevision === 'ISAPRE');
 document.write('<br>Pacientes de ISAPRE con hora agendada para Traumatología:<br>');
 pacientesIsapreTraumatologia.forEach(paciente => {
@@ -99,5 +99,13 @@ pacientesIsapreTraumatologia.forEach(paciente => {
 const pacientesDental = dental.filter(paciente => paciente.prevision === 'ISAPRE');
 document.write('<br>Pacientes de ISAPRE con hora agendada para Odontología:<br>');
 pacientesIsapreTraumatologia.forEach(paciente => {
+    document.write(`${paciente.paciente} - ${paciente.prevision}<br>`);
+});
+
+
+//filtro traumatologia ISAPRE
+const pacientesFonasaTraumatologia = traumatologia.filter(paciente => paciente.prevision === 'FONASA');
+document.write('<br>Pacientes de FONASA con hora agendada para Traumatología:<br>');
+pacientesFonasaTraumatologia.forEach(paciente => {
     document.write(`${paciente.paciente} - ${paciente.prevision}<br>`);
 });
