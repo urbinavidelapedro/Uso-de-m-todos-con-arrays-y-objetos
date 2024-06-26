@@ -60,8 +60,44 @@ document.write(`<p>Primera atencion de radiología: ${radiologia[0].paciente} - 
 document.write(`<p>Primera atencion de traumatología: ${traumatologia[0].paciente} - ${traumatologia[0].prevision} | Última atención de traumatología : ${traumatologia[traumatologia.length -1].paciente} - ${traumatologia[traumatologia.length -1].prevision}.</p>`);
 document.write(`<p>Primera atencion dental: ${dental[0].paciente} - ${dental[0].prevision} | Última atención de dental: ${dental[dental.length -1].paciente} - ${dental[dental.length -1].prevision}.</p>`);
 
+document.write(`<p>Consultas dentales: </p>`);
 for (i=0;i<dental.length;i++){
     document.write(`<br> ${dental[i].hora} - ${dental[i].especialista} - ${dental[i].paciente} - ${dental[i].rut} - ${dental[i].prevision} <br>   `)
 
 
 };
+
+document.write(`<p>Total de los pacientes del centro: </p>`);
+
+for (i=0;i<radiologia.length;i++){
+    document.write(`${radiologia[i].paciente} <br>   `)
+};
+
+for (i=0;i<traumatologia.length;i++){
+    document.write(`${traumatologia[i].paciente} <br>   `)
+};
+
+for (i=0;i<dental.length;i++){
+    document.write(`${dental[i].paciente} <br>   `)
+};
+
+//filtro radiologia ISAPRE
+const pacientesIsapreRadiologia = radiologia.filter(paciente => paciente.prevision === 'ISAPRE');
+document.write('<br>Pacientes de ISAPRE con hora agendada para Radiología:<br>');
+pacientesIsapreRadiologia.forEach(paciente => {
+    document.write(`${paciente.paciente} - ${paciente.prevision}<br>`);
+});
+
+//filtro tarumatologia ISAPRE
+const pacientesIsapreTraumatologia = traumatologia.filter(paciente => paciente.prevision === 'ISAPRE');
+document.write('<br>Pacientes de ISAPRE con hora agendada para Traumatología:<br>');
+pacientesIsapreTraumatologia.forEach(paciente => {
+    document.write(`${paciente.paciente} - ${paciente.prevision}<br>`);
+});
+
+//filtro dental ISAPRE
+const pacientesDental = dental.filter(paciente => paciente.prevision === 'ISAPRE');
+document.write('<br>Pacientes de ISAPRE con hora agendada para Odontología:<br>');
+pacientesIsapreTraumatologia.forEach(paciente => {
+    document.write(`${paciente.paciente} - ${paciente.prevision}<br>`);
+});
